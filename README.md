@@ -1,2 +1,2 @@
 # Mckenna_Devlin_ttp_static
-repo for TTP application coding challenge part#2
+repo for my website trying to embed my HTML/JS/TS game at the moment
