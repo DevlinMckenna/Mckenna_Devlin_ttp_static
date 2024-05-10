@@ -33,5 +33,26 @@
 	<script> document.write(new Date()); </script>
 		<P>
 </h1>
+
+
+<!-- Container for the Phaser game -->
+    <div id="game-container"></div>
+
+    <script>
+        // Initialize and configure your Phaser 3 game
+        const config = {
+            type: Phaser.AUTO,
+            width: 800,
+            height: 600,
+            parent: 'game-container',
+            // Add more configurations as needed
+            // ...
+        };
+
+        // Create and start your Phaser 3 game
+        const game = new Phaser.Game(config);
+    </script>
+
+	
 </body>
 </html>
