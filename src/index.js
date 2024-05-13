@@ -1,4 +1,4 @@
-//import Phaser, { Scene } from 'phaser';
+import Phaser, { Scene } from 'phaser';
 import PlayScene from './scenes/PlayScene'; 
 import MenuScene from './scenes/MenuScene';
 import PreloadScene from './scenes/PreloadScene';
