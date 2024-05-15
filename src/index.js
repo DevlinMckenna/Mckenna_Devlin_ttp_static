@@ -3,53 +3,30 @@ import PlayScene from './scenes/PlayScene';
 import MenuScene from './scenes/MenuScene';
 import PreloadScene from './scenes/PreloadScene';
 import ScoreScene from './scenes/ScoreScene';
-import PauseScene from './scenes/pauseScene';
+import PauseScene from './scenes/PauseScene';
 
 const WIDTH = 800;
 const HEIGHT = 600;
-const BIRD_POSITION = {x: WIDTH/10, y: HEIGHT/2}
+const BIRD_POSITION = { x: WIDTH / 10, y: HEIGHT / 2 };
 
 const SHARED_CONFIG = {
   width: WIDTH,
   height: HEIGHT,
-  startPosition: BIRD_POSITION
-}
+  startPosition: BIRD_POSITION,
+};
 
-const Scenes = [PreloadScene, MenuScene, ScoreScene, PlayScene,  PauseScene];
+const Scenes = [PreloadScene, MenuScene, ScoreScene, PlayScene, PauseScene];
 
-const createScene = Scene => new Scene(SHARED_CONFIG)
-const initialScenes = () => Scenes.map(createScene)
+const createScene = (Scene) => new Scene(SHARED_CONFIG);
+const initialScenes = () => Scenes.map(createScene);
 
 const config = {
-type: Phaser.AUTO,
- ...SHARED_CONFIG,
-  physics:{
-    default:'arcade',
-  
-},
-
-scene: initialScenes()
-}
-
-
-
-
-
-
-
-
-
-function create(){
-
-
-}
-
-function update(time, delta){
-
-
-}
-
-
-
+  type: Phaser.AUTO,
+  ...SHARED_CONFIG,
+  physics: {
+    default: 'arcade',
+  },
+  scene: initialScenes(),
+};
 
 new Phaser.Game(config);
