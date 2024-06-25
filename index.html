@@ -12,9 +12,8 @@
     <h2>-Video Games</h2>
     <h2>-5 hour coding challenges.</h2>
     <h2>-Long walks on the beach.</h2>
-    <h1> Date and time:
         <p>
-            Devlin Mckenna -
+            Date and time: 
             <script> document.write(new Date()); </script>
         <P>
     </h1>
@@ -35,7 +34,7 @@ var myScore;
 
 function startGame() {
     myGamePiece = new component(20, 20, "black", 10, 120);
-    myGamePiece.gravity = 0.05;
+    myGamePiece.gravity = 0.1;
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
     myGameArea.start();
 }
