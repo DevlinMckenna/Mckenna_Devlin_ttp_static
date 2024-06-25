@@ -1,18 +1,10 @@
 <!DOCTYPE html>
-
 <html>
-
-
 <body bgcolor="black" text="white">
-
-
     <h1>
         <p>
             Girth-Quake Games - Static web page by Devlin McKenna
-
         <P>
-
-
         </p>
     </h1>
     <hr>
@@ -21,15 +13,11 @@
     <h2>-5 hour coding challenges.</h2>
     <h2>-Long walks on the beach.</h2>
     <h1> Date and time:
-
         <p>
             Devlin Mckenna -
             <script> document.write(new Date()); </script>
         <P>
     </h1>
-
-
-
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <style>
@@ -41,7 +29,6 @@ canvas {
 </head>
 <body onload="startGame()">
 <script>
-
 var myGamePiece;
 var myObstacles = [];
 var myScore;
@@ -62,7 +49,18 @@ var myGameArea = {
         document.body.insertBefore(this.canvas, document.body.childNodes[0]);
         this.frameNo = 0;
         this.interval = setInterval(updateGameArea, 20);
-        },
+        // Add event listeners for keydown and keyup
+        window.addEventListener('keydown', function (e) {
+            if (e.code == 'Space') {
+                accelerate(-0.2);
+            }
+        })
+        window.addEventListener('keyup', function (e) {
+            if (e.code == 'Space') {
+                accelerate(0.05);
+            }
+        })
+    },
     clear : function() {
         this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
     }
@@ -161,7 +159,7 @@ function accelerate(n) {
 </script>
 <br>
 <button onmousedown="accelerate(-0.2)" onmouseup="accelerate(0.05)">ACCELERATE</button>
-<p>Use the ACCELERATE button to stay in the air</p>
+<p>Use the ACCELERATE button or press SPACE to stay in the air</p>
 <p>How long can you stay alive?</p>
 </body>
 </html>
