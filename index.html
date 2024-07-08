@@ -30,7 +30,7 @@ canvas {
 <script>
 var myGamePiece;
 var myObstacles = [];
-var myScore;
+var myScore = 0;
 
 function startGame() {
     myGamePiece = new component(20, 20, "black", 10, 120);
@@ -141,7 +141,7 @@ function updateGameArea() {
         myObstacles[i].x += -1;
         myObstacles[i].update();
     }
-    myScore.text="SCORE: " + this.score;
+    myScore.text="SCORE: " + myScore;
     myScore.update();
     myGamePiece.newPos();
     myGamePiece.update();
