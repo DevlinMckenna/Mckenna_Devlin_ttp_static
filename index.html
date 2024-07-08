@@ -52,12 +52,14 @@ var myGameArea = {
         // Add event listeners for keydown and keyup
         window.addEventListener('keydown', function (e) {
             if (e.code == 'Space') {
-                accelerate(-0.2);
+               // accelerate(-0.2);
+                myGamePiece.velocity.y = -2;
             }
         })
         window.addEventListener('keyup', function (e) {
             if (e.code == 'Space') {
-                accelerate(0.05);
+              //  accelerate(0.05);
+                
             }
         })
     },
