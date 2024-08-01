@@ -140,6 +140,7 @@ function updateGameArea() {
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
         myObstacles.push(new component(20, height, "pink", x, 0));
         myObstacles.push(new component(20, x - height - gap, "pink", x, height + gap));
+        console.log(getRandomIntBetween1And3());
         countDeez();
     }
     for (i = 0; i < myObstacles.length; i += 1) {
@@ -164,6 +165,10 @@ function accelerate(n) {
 
 function countDeez() {
     myCounter++;
+}
+
+function getRandomIntBetween1And3() {
+    return Math.floor(Math.random() * 3) + 1;
 }
 </script>
 <br>
