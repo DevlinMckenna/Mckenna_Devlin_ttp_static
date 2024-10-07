@@ -32,6 +32,7 @@ var myGamePiece;
 var myObstacles = [];
 var myScore = 0;
 var myCounter= 0;
+var myColor= "pink";
 
 function startGame() {
     myGamePiece = new component(20, 20, "black", 10, 120);
@@ -138,9 +139,10 @@ function updateGameArea() {
         minGap = 50;
         maxGap = 200;
         gap = Math.floor(Math.random()*(maxGap-minGap+1)+minGap);
-        myObstacles.push(new component(20, height, "pink", x, 0));
-        myObstacles.push(new component(20, x - height - gap, "pink", x, height + gap));
+        myObstacles.push(new component(20, height, myColor, x, 0));
+        myObstacles.push(new component(20, x - height - gap, myColor, x, height + gap));
         console.log(getRandomIntBetween1And3());
+
         countDeez();
     }
     for (i = 0; i < myObstacles.length; i += 1) {
@@ -169,6 +171,7 @@ function countDeez() {
 
 function getRandomIntBetween1And3() {
     return Math.floor(Math.random() * 3) + 1;
+
 }
 </script>
 <br>
