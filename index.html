@@ -10,7 +10,7 @@
     <hr>
     <h1> Hobbies</h1>
     <h2>-Playing Video Games</h2>
-    <h2>-Writing Video Games.</h2>
+    <h2>-Making Video Games.</h2>
     <h2>-Long walks on the beach.</h2>
         <p>
             Date and time: 
@@ -142,6 +142,11 @@ function updateGameArea() {
         myObstacles.push(new component(20, height, myColor, x, 0));
         myObstacles.push(new component(20, x - height - gap, myColor, x, height + gap));
         console.log(getRandomIntBetween1And3());
+        bindColorString();
+        console.log(myColor);
+        
+        
+        
 
         countDeez();
     }
@@ -167,6 +172,12 @@ function accelerate(n) {
 
 function countDeez() {
     myCounter++;
+}
+
+function bindColorString(){
+if (getRandomIntBetween1And3()==1){myColor='red';}
+if (getRandomIntBetween1And3()==2){myColor='blue';}
+if (getRandomIntBetween1And3()==3){myColor='green';}
 }
 
 function getRandomIntBetween1And3() {
