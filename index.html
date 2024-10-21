@@ -72,6 +72,22 @@ var myGameArea = {
                         console.log(mySquareColor);
                     }
         })
+
+        window.addEventListener('keydown', function(e) {
+                    if (e.code == 'KeyS') {
+                        mySquareColor = "blue"; // Update the color variable
+                        myGamePiece.color = mySquareColor; // Change the game piece color
+                        console.log(mySquareColor);
+                    }
+        })
+
+        window.addEventListener('keydown', function(e) {
+                    if (e.code == 'KeyD') {
+                        mySquareColor = "green"; // Update the color variable
+                        myGamePiece.color = mySquareColor; // Change the game piece color
+                        console.log(mySquareColor);
+                    }
+        })
         
     },
     clear : function() {
