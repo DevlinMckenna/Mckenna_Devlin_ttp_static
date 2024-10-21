@@ -65,12 +65,12 @@ var myGameArea = {
             }
         })
 
-        window.addEventListener('keydown', function (e) {
-            if (e.code == 'KeyA') {
-                mySquareColor = "red";
-                console.log(mySquareColor);
-                
-            }
+        window.addEventListener('keydown', function(e) {
+                    if (e.code == 'KeyA') {
+                        mySquareColor = "red"; // Update the color variable
+                        myGamePiece.color = mySquareColor; // Change the game piece color
+                        console.log(mySquareColor);
+                    }
         })
         
     },
@@ -156,7 +156,6 @@ function updateGameArea() {
       //  console.log(myColor);
          countDeez();
 
-       //  myGamePiece = component(20, 20, mySquareColor, 10, 120);
     }
     for (i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].x += -1;
