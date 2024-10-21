@@ -90,6 +90,8 @@ function component(width, height, color, x, y, type) {
     this.y = y;
     this.gravity = 0;
     this.gravitySpeed = 0;
+    this.color = color; // Store the initial color
+
     this.update = function() {
         ctx = myGameArea.context;
         if (this.type == "text") {
@@ -97,7 +99,7 @@ function component(width, height, color, x, y, type) {
             ctx.fillStyle = color;
             ctx.fillText(this.text, this.x, this.y);
         } else {
-            ctx.fillStyle = color;
+            ctx.fillStyle = this.color;
             ctx.fillRect(this.x, this.y, this.width, this.height);
         }
     }
