@@ -107,6 +107,7 @@ function component(width, height, color, x, y, type) {
     this.gravity = 0;
     this.gravitySpeed = 0;
     this.color = color; // Store the initial color
+    this.hasPassed = false; //flag for the pass test
 
     this.update = function() {
         ctx = myGameArea.context;
@@ -171,7 +172,7 @@ function updateGameArea() {
         myObstacles.push(new component(20, x - height - gap, myColor, x, height + gap));
        
         bindColorString();
-      //  console.log(myColor);
+      
          countDeez();
 
     }
@@ -209,7 +210,10 @@ if (getRandomIntBetween1And3()==3){myColor='green';}
 
 function passCheck(obstacle){
     if (obstacle.x + obstacle.width < myGamePiece.x) {
+        if (obstacle.hasPassed==false){
         console.log("Pass");
+        obstacle.hasPassed =true;
+    }
     }
 }
 
