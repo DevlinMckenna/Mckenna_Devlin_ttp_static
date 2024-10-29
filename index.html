@@ -175,9 +175,11 @@ function updateGameArea() {
          countDeez();
 
     }
+
     for (i = 0; i < myObstacles.length; i += 1) {
         myObstacles[i].x += -1;
         myObstacles[i].update();
+        passCheck(myObstacles[i]); // Check if the obstacle has passed the game piece
     }
     
     myScore.text="SCORE: " + myCounter;
@@ -203,6 +205,12 @@ function bindColorString(){
 if (getRandomIntBetween1And3()==1){myColor='red';}
 if (getRandomIntBetween1And3()==2){myColor='blue';}
 if (getRandomIntBetween1And3()==3){myColor='green';}
+}
+
+function passCheck(obstacle){
+    if (obstacle.x + obstacle.width < myGamePiece.x) {
+        console.log("Pass");
+    }
 }
 
 function getRandomIntBetween1And3() {
