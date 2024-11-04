@@ -211,7 +211,9 @@ if (getRandomIntBetween1And3()==3){myColor='green';}
 function passCheck(obstacle){
     if (obstacle.x + obstacle.width < myGamePiece.x) {
         if (obstacle.hasPassed==false){
-        console.log("Pass");
+        if(myGamePiece.color == obstacle.color ){console.log("Pass");}
+        else {console.log("fail");}
+        
         obstacle.hasPassed =true;
     }
     }
