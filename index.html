@@ -154,6 +154,7 @@ function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
+            console.log("crashed")
             return;
         } 
     }
@@ -212,7 +213,9 @@ function passCheck(obstacle){
     if (obstacle.x + obstacle.width < myGamePiece.x) {
         if (obstacle.hasPassed==false){
         if(myGamePiece.color == obstacle.color ){console.log("Pass");}
-        else {console.log("fail");}
+        else {
+            
+            console.log("fail");}
         
         obstacle.hasPassed =true;
     }
