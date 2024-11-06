@@ -31,6 +31,7 @@ canvas {
 var myGamePiece;
 var myObstacles = [];
 var myScore = 0;
+var myFail= "";
 var myCounter= 0;
 var myColor= "pink";
 var mySquareColor = "pink";
@@ -40,6 +41,7 @@ function startGame() {
     myGamePiece = new component(20, 20, mySquareColor, 10, 120);
     myGamePiece.gravity = 0.1;
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
+    myFail = new component("30px", "Consolas", "black", 280, 140, "text");
     myGameArea.start();
 }
 
@@ -155,6 +157,7 @@ function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])|| crashFlag==true) {
+            myFail.text = "MISMATCHED COLOR";
             console.log("crashed")
             return;
         } 
@@ -187,6 +190,7 @@ function updateGameArea() {
     
     myScore.text="SCORE: " + myCounter;
     myScore.update();
+    
     myGamePiece.newPos();
     myGamePiece.update();
 }
