@@ -31,7 +31,7 @@ canvas {
 var myGamePiece;
 var myObstacles = [];
 var myScore = 0;
-var myFail= "";
+var myFail= "A,S,D to change color";
 var myCounter= 0;
 var myColor= "pink";
 var mySquareColor = "pink";
@@ -41,7 +41,7 @@ function startGame() {
     myGamePiece = new component(20, 20, mySquareColor, 10, 120);
     myGamePiece.gravity = 0.1;
     myScore = new component("30px", "Consolas", "black", 280, 40, "text");
-    myFail = new component("30px", "Consolas", "black", 280, 80, "text");
+    myFail = new component("30px", "Consolas", "black", 240, 80, "text");
     myGameArea.start();
 }
 
