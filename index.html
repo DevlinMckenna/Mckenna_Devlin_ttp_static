@@ -162,13 +162,13 @@ function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])) {
-            myFail.text = "MISMATCHED COLOR";
+            myFail.text = "CRASHED";
             myFail.update();
            // console.log("crashed")
             return;
         } 
         if (crashFlag==true){
-            myFail.text = "CRASHED";
+            myFail.text = "MISMATCHED COLOR";
             myFail.update();
             return;
         }
