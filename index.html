@@ -44,6 +44,10 @@ function startGame() {
     myFail = new component("30px", "Consolas", "black", 240, 80, "text");
     myFail.text ="A,S,D to change color";
     myGameArea.start();
+
+    setTimeout(function() {
+        myFail.text = "";
+    }, 3000);
 }
 
 var myGameArea = {
@@ -192,7 +196,10 @@ function updateGameArea() {
     
     myScore.text="SCORE: " + myCounter;
     myScore.update();
-    myFail.update();
+
+    if (myFail.text !== "") {
+        myFail.update();
+    }
     myGamePiece.newPos();
     myGamePiece.update();
 }
