@@ -158,6 +158,7 @@ function updateGameArea() {
     for (i = 0; i < myObstacles.length; i += 1) {
         if (myGamePiece.crashWith(myObstacles[i])|| crashFlag==true) {
             myFail.text = "MISMATCHED COLOR";
+            myFail.update();
             console.log("crashed")
             return;
         } 
