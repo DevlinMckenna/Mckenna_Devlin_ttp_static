@@ -34,6 +34,7 @@ var myScore = 0;
 var myCounter= 0;
 var myColor= "pink";
 var mySquareColor = "pink";
+var crashFlag = false;
 
 function startGame() {
     myGamePiece = new component(20, 20, mySquareColor, 10, 120);
@@ -153,7 +154,7 @@ function component(width, height, color, x, y, type) {
 function updateGameArea() {
     var x, height, gap, minHeight, maxHeight, minGap, maxGap;
     for (i = 0; i < myObstacles.length; i += 1) {
-        if (myGamePiece.crashWith(myObstacles[i])) {
+        if (myGamePiece.crashWith(myObstacles[i])|| crashFlag==true) {
             console.log("crashed")
             return;
         } 
@@ -214,7 +215,7 @@ function passCheck(obstacle){
         if (obstacle.hasPassed==false){
         if(myGamePiece.color == obstacle.color ){console.log("Pass");}
         else {
-            
+             crashFlag= true;
             console.log("fail");}
         
         obstacle.hasPassed =true;
